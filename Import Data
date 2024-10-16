@@ -1,0 +1,7 @@
+@can('isadmin')
+                <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="file" accept=".xlsx,.xls" required>
+                <button type="submit">Import</button>
+            </form>
+            @endcan
