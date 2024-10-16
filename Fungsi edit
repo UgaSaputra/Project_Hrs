@@ -1,0 +1,11 @@
+<td>
+    @if (auth()->user()->can('ismanager'))
+      <a href="{{ route('employee.edit', $employee->id_number) }}"
+          class="btn btn-primary">Edit</a>
+    @endif
+
+    <form action="{{ route('employee.archive', $employee->id_number) }}" method="POST"
+       style="display:inline;">
+       @csrf
+    <button type="submit" class="btn btn-warning">Arsipkan</button>
+    </form>
